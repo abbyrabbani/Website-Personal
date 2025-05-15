@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,26 +57,39 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegbasuki2.jpeg" alt="Seniman 1">
+    <img id="artistImg" src="images.jpegbasuki2.jpeg" alt="Seniman 1">
     <div>
-      <h2>Seniman 1 - Basuki Abdullah</h2>
-      <p><strong>Deskripsi:</strong> Deskripsi Seniman:
-        Basuki Abdullah adalah pelukis realis dan naturalis Indonesia yang sangat mahir dalam menangkap detail wajah dan ekspresi manusia. Ia banyak membuat lukisan potret untuk keluarga kerajaan, pejabat tinggi, dan tokoh dunia. Gaya lukisannya yang halus dan romantik menjadikannya sangat terkenal, bahkan hingga ke mancanegara..</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong>Lukisan Ratu Kidul dibuat sebagai bentuk penghormatan kepada mitos budaya Jawa tentang penguasa laut selatan. Basuki ingin menangkap esensi mistis dan keanggunan sosok legendaris tersebut, menunjukkan keterikatan budaya Jawa dengan dunia spiritual dan alam. .</p>
-      <p><strong>Harga Tiket:</strong> Rp100.000</p>
+      <h2 id="artistName">Seniman 1 - Basuki Abdullah</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Basuki Abdullah adalah pelukis realis dan naturalis Indonesia yang sangat mahir dalam menangkap detail wajah dan ekspresi manusia...</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Lukisan Ratu Kidul dibuat sebagai bentuk penghormatan kepada mitos budaya Jawa...</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran5.html">Beli Tiket</a>
     </div>
   </div>
 </div>
 
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman24_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));

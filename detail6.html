@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,24 +57,38 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegRaden2.jpeg" alt="Raden Saleh">
+    <img id="artistImg" src="images.jpegRaden2.jpeg" alt="Raden Saleh">
     <div>
-      <h2>Seniman 1 -Raden Saleh</h2>
-      <p><strong>Deskripsi:</strong> Raden Saleh Raden Saleh Syarif Bustaman adalah pelukis Indonesia pertama yang mengadopsi gaya Romantisisme Eropa. Ia menempuh pendidikan seni di Belanda dan menjadi pelukis istana kerajaan Belanda. Raden Saleh dikenal karena kecerdasan artistik dan keberaniannya dalam membawa perspektif pribumi Indonesia ke dalam kancah seni kolonial..</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong>Karya Penangkapan Pangeran Diponegoro dibuat sebagai bentuk kritik halus terhadap kekuasaan kolonial Belanda. Dengan menggambarkan wajah Pangeran Diponegoro yang marah namun bermartabat, Raden Saleh secara simbolis memperlihatkan ketidakadilan kolonial dan semangat perjuangan bangsa Indonesia. .</p>
-      <p><strong>Harga Tiket:</strong> Rp100.000</p>
+      <h2 id="artistName">Seniman 1 - Raden Saleh</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Raden Saleh Syarif Bustaman adalah pelukis Indonesia pertama yang mengadopsi gaya Romantisisme Eropa. Ia menempuh pendidikan seni di Belanda dan menjadi pelukis istana kerajaan Belanda. Raden Saleh dikenal karena kecerdasan artistik dan keberaniannya dalam membawa perspektif pribumi Indonesia ke dalam kancah seni kolonial.</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Karya Penangkapan Pangeran Diponegoro dibuat sebagai bentuk kritik halus terhadap kekuasaan kolonial Belanda. Dengan menggambarkan wajah Pangeran Diponegoro yang marah namun bermartabat, Raden Saleh secara simbolis memperlihatkan ketidakadilan kolonial dan semangat perjuangan bangsa Indonesia.</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran6.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman25_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));

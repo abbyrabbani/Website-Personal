@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,24 +57,39 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegEntang2.jpeg" alt="Entang Wiharso">
+    <img id="artistImg" src="images.jpegEntang2.jpeg" alt="Entang Wiharso">
     <div>
-      <h2> Entang Wiharso</h2>
-      <p><strong>Deskripsi:</strong> Entang Wiharso adalah perupa kontemporer yang karya-karyanya sering mengeksplorasi tema identitas, politik, nasionalisme, dan pengalaman personal. Ia banyak bekerja dengan media instalasi, lukisan logam, dan patung. Gaya visualnya penuh dengan simbolisme dan figur-figur kompleks.</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong> Temple of Hope: Door to Nirvana adalah instalasi yang merepresentasikan pencarian spiritual manusia di tengah kekacauan dunia. Melalui karya ini, Entang mengajak audiens merenungkan perjalanan batin manusia dalam mencari makna hidup, perdamaian, dan kebebasan dari dunia yang penuh konflik</p>
-      <p><strong>Harga Tiket:</strong> Rp100.000</p>
+      <h2 id="artistName">Entang Wiharso</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Entang Wiharso adalah perupa kontemporer yang karya-karyanya sering mengeksplorasi tema identitas, politik, nasionalisme, dan pengalaman personal. Ia banyak bekerja dengan media instalasi, lukisan logam, dan patung. Gaya visualnya penuh dengan simbolisme dan figur-figur kompleks.</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Temple of Hope: Door to Nirvana adalah instalasi yang merepresentasikan pencarian spiritual manusia di tengah kekacauan dunia. Melalui karya ini, Entang mengajak audiens merenungkan perjalanan batin manusia dalam mencari makna hidup, perdamaian, dan kebebasan dari dunia yang penuh konflik.</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran9.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman28_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));

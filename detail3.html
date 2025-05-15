@@ -1,12 +1,10 @@
- lukisan cat air bertema feminisme modern. Dengan palet warna lembut dan teknik realistis, ia menghadirkan gambaran wanita masa kini yang kuat dan berdaya
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Detail Seniman 1 - Galeri Seni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -22,6 +20,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       overflow: hidden;
       padding: 20px;
+      position: relative;
     }
     .artist-info {
       display: flex;
@@ -58,24 +57,38 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="download.jpeg2.jpeg" alt="Eddi Hara">
+    <img id="artistImg" src="download.jpeg2.jpeg" alt="Eddi Hara">
     <div>
-      <h2>Eddi Hara</h2>
-      <p><strong>Deskripsi:</strong>Eddie Hara adalah salah satu pelukis kontemporer Indonesia yang sangat unik dengan gaya pop-surrealismenya. Ia lahir di Salatiga, Jawa Tengah, dan menempuh pendidikan di Akademi Seni Rupa Indonesia (ASRI) Yogyakarta sebelum melanjutkan ke Basel, Swiss. Gaya lukisannya dikenal penuh warna cerah, karakter-karakter imajinatif, seperti monster kartun, makhluk aneh, dan simbol-simbol pop culture. Eddie Hara sering disebut sebagai "seniman rebel" karena menolak konvensi gaya lukisan tradisional Indonesia, memilih jalan bebas dan personal dalam berekspresi.</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong>Karya Eddie Hara, seperti seri Monster and Friends, diciptakan untuk menggambarkan kebebasan penuh dalam dunia seni. Eddie menggunakan karakter monster, alien, dan makhluk aneh sebagai kritik atas absurditas dunia modern: politik yang kacau, kapitalisme, dan konsumerisme. Dengan gaya yang tampak 'lucu' namun dalam, ia menyampaikan pesan bahwa di balik keceriaan ada ketidakpastian, kecemasan, dan absurditas zaman sekarang. Ia ingin melawan narasi serius dalam seni rupa dengan membawa spirit kegembiraan yang liar dan anti-konvensi.</p>
-      <p><strong>Harga Tiket:</strong> Rp110.000</p>
+      <h2 id="artistName">Eddi Hara</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Eddie Hara adalah salah satu pelukis kontemporer Indonesia yang sangat unik dengan gaya pop-surrealismenya...</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Karya Eddie Hara, seperti seri Monster and Friends, diciptakan untuk menggambarkan kebebasan penuh dalam dunia seni...</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran3.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman31_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -120,3 +133,4 @@
 
 </body>
 </html>
+

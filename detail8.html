@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,24 +57,38 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegdono2.jpeg" alt="Seniman 1">
+    <img id="artistImg" src="images.jpegdono2.jpeg" alt="Heri Dono">
     <div>
-      <h2>Seniman 1 -Heri Dono</h2>
-      <p><strong>Deskripsi:</strong> Heri Dono Heri Dono adalah seniman kontemporer Indonesia yang terkenal di dunia internasional. Ia menggabungkan budaya tradisional Indonesia, seperti wayang, dengan kritik sosial dan politik global dalam karya-karyanya. Karyanya sering bersifat interaktif, humoris, namun tajam dalam menyampaikan pesan..</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong> Flying Angels dibuat sebagai interpretasi modern terhadap figur-figur pewayangan, khususnya malaikat dan makhluk transenden. Karya ini merupakan komentar tentang harapan manusia untuk mencapai kebebasan di tengah dunia yang penuh konflik, korupsi, dan ketidakadilan .</p>
-      <p><strong>Harga Tiket:</strong> Rp100.000</p>
+      <h2 id="artistName">Seniman 1 - Heri Dono</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Heri Dono adalah seniman kontemporer Indonesia yang terkenal di dunia internasional. Ia menggabungkan budaya tradisional Indonesia, seperti wayang, dengan kritik sosial dan politik global dalam karya-karyanya. Karyanya sering bersifat interaktif, humoris, namun tajam dalam menyampaikan pesan.</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Flying Angels dibuat sebagai interpretasi modern terhadap figur-figur pewayangan, khususnya malaikat dan makhluk transenden. Karya ini merupakan komentar tentang harapan manusia untuk mencapai kebebasan di tengah dunia yang penuh konflik, korupsi, dan ketidakadilan.</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran8.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman27_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));

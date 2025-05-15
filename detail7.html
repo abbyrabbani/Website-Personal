@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,24 +57,38 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegnyoman2.jpeg" alt="I Nyoman Masriadi">
+    <img id="artistImg" src="images.jpegnyoman2.jpeg" alt="I Nyoman Masriadi">
     <div>
-      <h2>Seniman 1 - I Nyoman Masriadi</h2>
-      <p><strong>Deskripsi:</strong> I Nyoman Masriadi Masriadi adalah pelukis kontemporer asal Bali yang dikenal dengan karakter-karakter besar, kuat, dan kadang humoris di kanvasnya. Ia menggunakan warna-warna mencolok dengan figur manusia bergaya kartun untuk mengkritik fenomena sosial seperti kekerasan, diskriminasi, dan kapitalisme modern.</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong>Karya The Man from Bantul (The Final Round) menggambarkan seorang petarung jalanan yang berjuang untuk bertahan hidup. Melalui karya ini, Masriadi mengkritik kerasnya kehidupan kelas bawah di Indonesia, bagaimana manusia sering harus berkompetisi tanpa henti hanya untuk bertahan. .</p>
-      <p><strong>Harga Tiket:</strong> Rp100.000</p>
+      <h2 id="artistName">Seniman 1 - I Nyoman Masriadi</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">I Nyoman Masriadi Masriadi adalah pelukis kontemporer asal Bali yang dikenal dengan karakter-karakter besar, kuat, dan kadang humoris di kanvasnya. Ia menggunakan warna-warna mencolok dengan figur manusia bergaya kartun untuk mengkritik fenomena sosial seperti kekerasan, diskriminasi, dan kapitalisme modern.</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Karya The Man from Bantul (The Final Round) menggambarkan seorang petarung jalanan yang berjuang untuk bertahan hidup. Melalui karya ini, Masriadi mengkritik kerasnya kehidupan kelas bawah di Indonesia, bagaimana manusia sering harus berkompetisi tanpa henti hanya untuk bertahan.</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp100.000</span></p>
       <a class="btn-beli" href="pembayaran7.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman26_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));

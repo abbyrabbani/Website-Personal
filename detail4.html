@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -57,24 +57,38 @@
     .btn-beli:hover {
       background-color: #357ABD;
     }
+    .btn-edit {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f39c12;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
+  <button class="btn-edit" onclick="editDetail()">✏️ Edit</button>
   <div class="artist-info">
-    <img src="images.jpegaffandi2.jpeg" alt="Seniman 1">
+    <img id="artistImg" src="images.jpegaffandi2.jpeg" alt="Seniman 1">
     <div>
-      <h2>Seniman 1 - Affandi</h2>
-      <p><strong>Deskripsi:</strong>Affandi adalah salah satu pelukis ekspresionis terbesar Indonesia, lahir di Cirebon. Ia dikenal dengan teknik "memeras" cat langsung dari tube ke kanvas, menghasilkan goresan yang emosional dan kuat. Affandi tidak hanya melukis keindahan, tetapi juga mengungkapkan penderitaan, harapan, dan kemanusiaan dalam karya-karyanya. Ia mewakili Indonesia dalam banyak pameran dunia, termasuk Venice Biennale .</p>
-      <p><strong>Kenapa Seni Ini Dibuat:</strong> Lukisan Self-Portrait diciptakan Affandi untuk menunjukkan ekspresi jujur dirinya terhadap hidup dan kematian. Bagi Affandi, melukis adalah bentuk kejujuran total, tanpa rekayasa. Ia ingin merekam dirinya bukan sebagai orang terkenal, tetapi sebagai manusia biasa yang bergumul dengan waktu dan nasib.</p>
-      <p><strong>Harga Tiket:</strong> Rp150.000</p>
+      <h2 id="artistName">Seniman 1 - Affandi</h2>
+      <p><strong>Deskripsi:</strong> <span id="artistDesc">Affandi adalah salah satu pelukis ekspresionis terbesar Indonesia, lahir di Cirebon...</span></p>
+      <p><strong>Kenapa Seni Ini Dibuat:</strong> <span id="artistReason">Lukisan Self-Portrait diciptakan Affandi untuk menunjukkan ekspresi jujur dirinya terhadap hidup dan kematian...</span></p>
+      <p><strong>Harga Tiket:</strong> <span id="artistPrice">Rp150.000</span></p>
       <a class="btn-beli" href="pembayaran4.html">Beli Tiket</a>
     </div>
   </div>
 </div>
+
 <script>
-  const STORAGE_KEY = 'seniman1_detail';
+  const STORAGE_KEY = 'seniman23_detail';
 
   function renderDetail() {
     const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
